@@ -29,7 +29,7 @@ public class Lander extends AnimatedActor
                 //if (other.getClass().equals(testobject.class)){
                     if(Math.abs(((GameWorld)(getWorld())).vx) > 2 
                     || ((GameWorld)(getWorld())).vy < -4 
-                    || ((GameWorld)(getWorld())).vy > 0)
+                    || ((GameWorld)(getWorld())).vy > 0.5)
                     {
                         System.out.println("CRASH - TOO FAST");
                     }
