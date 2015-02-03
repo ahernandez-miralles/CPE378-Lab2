@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScrollingActor extends AnimatedActor
 {
-    private int xoff, yoff;
+    protected int xoff, yoff;
     public ScrollingActor()
     {
         super();

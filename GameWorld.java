@@ -12,6 +12,7 @@ public class GameWorld extends World
     private int width, height;
     public double vx, vy;
     public boolean landed = false;
+    private int fuel;
     private ArrayList<CollisionActor> allCollisionActors;
     /**
      * Constructor for objects of class GameWorld.
@@ -21,6 +22,7 @@ public class GameWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1, false); 
+        fuel = 500;
         width = getWidth();
         height = getHeight();
         allCollisionActors = new ArrayList<CollisionActor>();
@@ -42,6 +44,19 @@ public class GameWorld extends World
         }
         camX += vx;
         camY += vy;
+        System.out.println(fuel);
+    }
+    public void useFuel()
+    {
+        fuel--;
+    }
+    public void setFuel(int newFuel)
+    {
+        fuel = newFuel;
+    }
+    public int getFuel()
+    {
+        return fuel;
     }
     public double getCamX() {
         return camX;
@@ -64,7 +79,10 @@ public class GameWorld extends World
     public void placeActors(){
         Lander land = new Lander();
         //testobject test = new testobject();
+        Background bg = new Background();
         test2object test2 = new test2object();
+        
+        addObject(bg, 0, 0);
         addObject(land, 450, 250);
         //addObject(test, 400, 250);
         addObject(test2, 400, 250);

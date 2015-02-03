@@ -44,18 +44,25 @@ public class Lander extends AnimatedActor
                 //}
             }
         }
-        if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
+        if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && ((GameWorld)(getWorld())).getFuel() > 0)
         {
             ((GameWorld)(getWorld())).landed = false;
             ((GameWorld)getWorld()).addYVel(0.4);
+            Exhaust e1 = new Exhaust(-(int)((GameWorld)(getWorld())).getCamX() + 420, -(int)((GameWorld)(getWorld())).getCamY() + 280,"lander_trail_", ".png", 8, 2);
+            getWorld().addObject(e1, 0, 0);
+            Exhaust e2 = new Exhaust(-(int)((GameWorld)(getWorld())).getCamX() + 480, -(int)((GameWorld)(getWorld())).getCamY() + 280,"lander_trail_", ".png", 8, 2);
+            getWorld().addObject(e2, 0, 0);
+            ((GameWorld)(getWorld())).useFuel();
         }
-        if ((Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) && !((GameWorld)(getWorld())).landed)
+        if ((Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) && !((GameWorld)(getWorld())).landed && ((GameWorld)(getWorld())).getFuel() > 0)
         {
             ((GameWorld)getWorld()).addXVel(0.2);
+            ((GameWorld)(getWorld())).useFuel();
         }
-        if ((Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) && !((GameWorld)(getWorld())).landed)
+        if ((Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) && !((GameWorld)(getWorld())).landed && ((GameWorld)(getWorld())).getFuel() > 0)
         {
             ((GameWorld)getWorld()).addXVel(-0.2);
+            ((GameWorld)(getWorld())).useFuel();
         }
         super.act();
     }    

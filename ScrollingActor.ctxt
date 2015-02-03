@@ -9,5 +9,5 @@ comment3.params=x\ y\ basename\ suffix\ numImages\ delay
 comment3.target=ScrollingActor(int,\ int,\ java.lang.String,\ java.lang.String,\ int,\ int)
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ ScrollingActor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ ScrollingActor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=5
