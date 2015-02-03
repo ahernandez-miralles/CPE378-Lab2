@@ -11,7 +11,7 @@ public class Lander extends AnimatedActor
 {
     private GreenfootSound landSound, engineSound;
     public Lander(){
-        super("images/placeholder", ".png", 6, 2);
+        super("pig_ship_", ".png", 1, 2);
     }
     /**
      * Act - do whatever the Lander wants to do. This method is called whenever
