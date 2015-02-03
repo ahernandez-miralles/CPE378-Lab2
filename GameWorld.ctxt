@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameWorld()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ GameWorld.\n\ \n
+comment1.params=
+comment1.target=java.util.ArrayList\ getCollisionActors()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=double\ getCamX()
+comment4.params=
+comment4.target=double\ getCamY()
+comment5.params=vx
+comment5.target=void\ addXVel(double)
+comment6.params=vy
+comment6.target=void\ addYVel(double)
+comment7.params=v
+comment7.target=void\ setXVel(double)
+comment8.params=v
+comment8.target=void\ setYVel(double)
+comment9.params=
+comment9.target=void\ placeActors()
+numComments=10
