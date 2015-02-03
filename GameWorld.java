@@ -81,10 +81,14 @@ public class GameWorld extends World
         //testobject test = new testobject();
         Background bg = new Background();
         test2object test2 = new test2object();
-        
+        //CREATE ALL OBJECTS HERE
+        //Constructor for platform: new (x, y)
         addObject(bg, 0, 0);
-        addObject(land, 450, 250);
         //addObject(test, 400, 250);
         addObject(test2, 400, 250);
+        //ADD ALL PLATFORMS HERE
+        //THEN ADD ALL ENEMIES
+        //THEN ADD FINISH?
+        addObject(land, 450, 250);
     }
 }
