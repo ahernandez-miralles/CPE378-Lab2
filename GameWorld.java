@@ -44,7 +44,7 @@ public class GameWorld extends World
         }
         camX += vx;
         camY += vy;
-        System.out.println(fuel);
+        //System.out.println(fuel);
     }
     public void useFuel()
     {
@@ -83,11 +83,20 @@ public class GameWorld extends World
         test2object test2 = new test2object();
         //CREATE ALL OBJECTS HERE
         //Constructor for platform: new (x, y)
+        //Constructor for UFODog new Captialist(x, y, behavior, range, speed)
+        //behavior of 0 is moves back and forth, 1 is chasing
+        //range is number of frames moving left and right. Moves left of initial position. For chasing, is acquisition range
+        //speed is how fast the ship moves.
+        Capitalist enemy1 = new Capitalist(0, 100, 0, 60, 2);
+        Capitalist enemy2 = new Capitalist(0, 100, 1, 500, 2);
+        
         addObject(bg, 0, 0);
         //addObject(test, 400, 250);
         addObject(test2, 400, 250);
         //ADD ALL PLATFORMS HERE
         //THEN ADD ALL ENEMIES
+        addObject(enemy1, 0, 0);
+        addObject(enemy2, 0, 0);
         //THEN ADD FINISH?
         addObject(land, 450, 250);
     }

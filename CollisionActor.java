@@ -8,22 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CollisionActor extends ScrollingActor
 {
-    /**
-     * Act - do whatever the CollisionActor wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public CollisionActor()
+    public CollisionActor() //DON'T USE THIS!
     {
         super();
     }
-    
     public CollisionActor(int x, int y) {
         super(x, y);
-    }
-    
-    public CollisionActor(String basename, String suffix, int numImages, int delay)
-    {
-        super(basename, suffix, numImages, delay);
     }
     public CollisionActor(int x, int y, String basename, String suffix, int numImages, int delay)
     {   
@@ -32,5 +22,9 @@ public class CollisionActor extends ScrollingActor
     protected void addedToWorld(World world)
     {
         ((GameWorld)world).getCollisionActors().add(this);
+    }
+    public void act()
+    {
+        super.act();
     }
 }

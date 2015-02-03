@@ -1,13 +1,12 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CollisionActor()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ CollisionActor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment1.params=x\ y
 comment1.target=CollisionActor(int,\ int)
-comment2.params=basename\ suffix\ numImages\ delay
-comment2.target=CollisionActor(java.lang.String,\ java.lang.String,\ int,\ int)
-comment3.params=x\ y\ basename\ suffix\ numImages\ delay
-comment3.target=CollisionActor(int,\ int,\ java.lang.String,\ java.lang.String,\ int,\ int)
-comment4.params=world
-comment4.target=void\ addedToWorld(greenfoot.World)
+comment2.params=x\ y\ basename\ suffix\ numImages\ delay
+comment2.target=CollisionActor(int,\ int,\ java.lang.String,\ java.lang.String,\ int,\ int)
+comment3.params=world
+comment3.target=void\ addedToWorld(greenfoot.World)
+comment4.params=
+comment4.target=void\ act()
 numComments=5
