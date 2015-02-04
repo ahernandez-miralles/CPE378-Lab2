@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=x\ y\ s1\ s2\ frames\ delay
+comment0.target=Exhaust(int,\ int,\ java.lang.String,\ java.lang.String,\ int,\ int)
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Exhaust\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2
