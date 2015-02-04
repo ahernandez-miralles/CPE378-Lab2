@@ -50,6 +50,12 @@ public class GameWorld extends World
     {
         fuel--;
     }
+    public void addFuel()
+    {
+        if (fuel < 500) {
+            fuel++;
+        }
+    }
     public void setFuel(int newFuel)
     {
         fuel = newFuel;
@@ -82,7 +88,10 @@ public class GameWorld extends World
         Background bg = new Background();
         test2object test2 = new test2object();
         //CREATE ALL OBJECTS HERE
-        //Constructor for platform: new (x, y)
+        //Constructor for platform: new <Platform, DeathPlatform, FuelPlatform, WinPlatform>(x, y)
+        
+        Platform p1 = new Platform(600, 400);
+        FuelPlatform p2 = new FuelPlatform(700, 400);
         //Constructor for UFODog new Captialist(x, y, behavior, range, speed)
         //behavior of 0 is moves back and forth, 1 is chasing
         //range is number of frames moving left and right. Moves left of initial position. For chasing, is acquisition range
@@ -90,14 +99,20 @@ public class GameWorld extends World
         Capitalist enemy1 = new Capitalist(0, 100, 0, 60, 2);
         Capitalist enemy2 = new Capitalist(0, 100, 1, 500, 2);
         
+        //HUD stuff
+        FuelBar bar = new FuelBar();
+        
         addObject(bg, 0, 0);
         //addObject(test, 400, 250);
         addObject(test2, 400, 250);
         //ADD ALL PLATFORMS HERE
+        addObject(p1, 0, 0);
+        addObject(p2, 0, 0);
         //THEN ADD ALL ENEMIES
         addObject(enemy1, 0, 0);
         addObject(enemy2, 0, 0);
         //THEN ADD FINISH?
+        addObject(bar, 100, 50);
         addObject(land, 450, 250);
     }
 }

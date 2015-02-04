@@ -33,15 +33,17 @@ public class Lander extends AnimatedActor
             //  System.out.println(other);
             if (this.intersects(other))
             {
-                if (other.getClass().equals(test2object.class)){
+                if (other.getClass().equals(test2object.class) || other.getClass().equals(Platform.class) || other.getClass().equals(FuelPlatform.class) || other.getClass().equals(WinPlatform.class)){
                     if(Math.abs(((GameWorld)(getWorld())).vx) > 2 
                     || ((GameWorld)(getWorld())).vy < -4 
                     || ((GameWorld)(getWorld())).vy > 0.5)
                     {
+                        //crash due to too much X or Y velocity
                         System.out.println("CRASH - TOO FAST");
                         killPlayer();
                     }
                     else if (getY() > other.getY()) {
+                        //crash because player impacted below the platform, or along the side of it
                         System.out.println("CRASH - TOO LOW");
                         killPlayer();
                     }
@@ -49,9 +51,13 @@ public class Lander extends AnimatedActor
                         ((GameWorld)(getWorld())).setYVel(0);
                         ((GameWorld)(getWorld())).setXVel(0);
                         ((GameWorld)(getWorld())).landed = true;
+                        if (other.getClass().equals(FuelPlatform.class)) {
+                            ((GameWorld)(getWorld())).addFuel();
+                        }
                     }
                 }
                 else{
+                    //crashed because it collided with an enemy or something that cannot be landed on.
                     System.out.println("YOU HAVE CRASHED!");
                     killPlayer();
                     
@@ -62,12 +68,13 @@ public class Lander extends AnimatedActor
         if (getWorld() != null) {
             if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && ((GameWorld)(getWorld())).getFuel() > 0)
             {
-                ((GameWorld)(getWorld())).landed = false;
+                ((GameWorld)(getWorld())).landed = false; //no longer landed if applicable
                 ((GameWorld)getWorld()).addYVel(0.4);
+                //add the particles
                 Exhaust e1 = new Exhaust(-(int)((GameWorld)(getWorld())).getCamX() + 420, -(int)((GameWorld)(getWorld())).getCamY() + 280,"lander_trail_", ".png", 8, 2);
-                getWorld().addObject(e1, 0, 0);
+                getWorld().addObject(e1, 420, 280);
                 Exhaust e2 = new Exhaust(-(int)((GameWorld)(getWorld())).getCamX() + 480, -(int)((GameWorld)(getWorld())).getCamY() + 280,"lander_trail_", ".png", 8, 2);
-                getWorld().addObject(e2, 0, 0);
+                getWorld().addObject(e2, 480, 280);
                 ((GameWorld)(getWorld())).useFuel();
             }
             if ((Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) && !((GameWorld)(getWorld())).landed && ((GameWorld)(getWorld())).getFuel() > 0)
