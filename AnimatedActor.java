@@ -18,6 +18,7 @@ public class AnimatedActor extends Actor
     private int animationCounter = 0;
     private int delay = 0;
     private AnimationState state;
+    protected boolean flipped = false;
     
     public AnimatedActor()
     {
@@ -64,6 +65,31 @@ public class AnimatedActor extends Actor
                 currentImage = 0;
                 setImage(images[0]);
             }
+        }
+    }
+    
+    protected void useFlippedImage()
+    {
+        if (!flipped)
+        {
+            flipped = true;
+            flip();
+        }
+    }
+    
+    protected void useDefaultImage()
+    {
+        if (flipped)
+        {
+            flipped = false;
+            flip();
+        }
+    }
+    
+    private void flip() {
+        for (int i = 0; i < images.length; i++)
+        {
+            images[i].mirrorHorizontally();
         }
     }
     

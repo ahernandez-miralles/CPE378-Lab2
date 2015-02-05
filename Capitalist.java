@@ -18,7 +18,7 @@ public class Capitalist extends CollisionActor
     private int speed;
     private int curTime;
     public Capitalist(int x, int y, int behavior, int range, int speed){
-        super(x, y);
+        super(x, y, "dog_ship_", ".png", 1, 1);
         this.behavior = behavior;
         this.range = range;
         this.speed = speed;
@@ -30,10 +30,12 @@ public class Capitalist extends CollisionActor
         {
             if (curTime > range) {
                 this.xoff += speed;
+                this.useFlippedImage();
             }
             else
             {
                 this.xoff -= speed;
+                this.useDefaultImage();
             }
             curTime = curTime % (2 * range);
             curTime++;
@@ -46,11 +48,13 @@ public class Capitalist extends CollisionActor
                  if (xoff + ((GameWorld)(getWorld())).getCamX() - 450 > 5) 
                  {
                      xoff -= speed;
+                     this.useDefaultImage();
                  }
                  
                  if (xoff + ((GameWorld)(getWorld())).getCamX() - 450 < -5) 
                  {
                      xoff += speed;
+                     this.useFlippedImage();
                  }
                  
                  if (yoff + ((GameWorld)(getWorld())).getCamY() - 250 > 5) 
