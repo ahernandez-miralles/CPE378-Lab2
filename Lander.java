@@ -87,6 +87,13 @@ public class Lander extends AnimatedActor
                 ((GameWorld)getWorld()).addXVel(-0.2);
                 ((GameWorld)(getWorld())).useFuel();
             }
+            if (((GameWorld)getWorld()).vx > 0)
+            {
+                this.useFlippedImage();
+            }
+            else {
+                this.useDefaultImage();
+            }
             super.act();
         }
     }    
