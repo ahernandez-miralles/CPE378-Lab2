@@ -13,7 +13,7 @@ public class Lander extends AnimatedActor
     private GreenfootSound engineSound = new GreenfootSound("sounds/jet_loop.wav");
     
     public Lander(){
-        super("pig_ship_", ".png", 2, 2);
+        super("pig_ship_", ".png", 2, 15);
     }
     /**
      * Act - do whatever the Lander wants to do. This method is called whenever
@@ -27,6 +27,7 @@ public class Lander extends AnimatedActor
         ((GameWorld)(getWorld())).gameOver = true;
         engineSound.stop();
         getWorld().addObject(new Explosion(), getX(), getY());
+        getWorld().addObject(new Bacon(-(int)((GameWorld)(getWorld())).getCamX() + 420,  -(int)((GameWorld)(getWorld())).getCamY() + 280, Math.random(), Math.random()), getX(), getY());
         getWorld().removeObject(this);
     }
     
@@ -45,12 +46,12 @@ public class Lander extends AnimatedActor
                     || ((GameWorld)(getWorld())).vy > 0.5)
                     {
                         //crash due to too much X or Y velocity
-                        System.out.println("CRASH - TOO FAST");
+                        //System.out.println("CRASH - TOO FAST");
                         killPlayer();
                     }
                     else if (getY() > other.getY()) {
                         //crash because player impacted below the platform, or along the side of it
-                        System.out.println("CRASH - TOO LOW");
+                        //System.out.println("CRASH - TOO LOW");
                         killPlayer();
                     }
                     else{
@@ -61,7 +62,7 @@ public class Lander extends AnimatedActor
                             ((GameWorld)(getWorld())).addFuel();
                         }
                         if(other.getClass().equals(WinPlatform.class)) {
-                            System.out.println("YOU WIN");
+                            //System.out.println("YOU WIN");
                             ((GameWorld) getWorld()).gameOver = true;
                             getWorld().addObject(new WinBubble(), 450, 300);
                             //killPlayer();
@@ -70,10 +71,14 @@ public class Lander extends AnimatedActor
                 }
                 else{
                     //crashed because it collided with an enemy or something that cannot be landed on.
-                    System.out.println("YOU HAVE CRASHED!");
+                    //System.out.println("YOU HAVE CRASHED!");
                     killPlayer();
                 }
             }
+        }
+        if (getWorld() != null && ((GameWorld)(getWorld())).getCamY() < -2500 && ((GameWorld)(getWorld())).getFuel() < 100)
+        {
+            killPlayer();
         }
         if (getWorld() != null) {
             boolean keyDown = false;
