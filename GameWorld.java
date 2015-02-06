@@ -86,7 +86,6 @@ public class GameWorld extends World
         Lander land = new Lander();
         //testobject test = new testobject();
         Background bg = new Background();
-        test2object test2 = new test2object();
         //CREATE ALL OBJECTS HERE
         //Constructor for platform: new <Platform, DeathPlatform, FuelPlatform, WinPlatform>(x, y)
         
@@ -106,7 +105,6 @@ public class GameWorld extends World
         
         addObject(bg, 0, 0);
         //addObject(test, 400, 250);
-        addObject(test2, 400, 250);
         //ADD ALL PLATFORMS HERE
         addObject(new Capitalist(350, 400, 0, 75, 3), 0, 0);
         addObject(new Capitalist(250, 400, 0, 75, 3), 0, 0);
