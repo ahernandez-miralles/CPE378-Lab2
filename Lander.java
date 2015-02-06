@@ -38,6 +38,10 @@ public class Lander extends AnimatedActor
             if (this.intersects(other))
             {
                 if (other.getClass().equals(Platform.class) || other.getClass().equals(FuelPlatform.class) || other.getClass().equals(WinPlatform.class)){
+                    if(other.getClass().equals(WinPlatform.class)) {
+                        System.out.println("YOU WIN");
+                        killPlayer();
+                    }
                     if(Math.abs(((GameWorld)(getWorld())).vx) > 2 
                     || ((GameWorld)(getWorld())).vy < -4 
                     || ((GameWorld)(getWorld())).vy > 0.5)
