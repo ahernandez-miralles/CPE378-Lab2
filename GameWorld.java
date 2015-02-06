@@ -16,6 +16,7 @@ public class GameWorld extends World
     private boolean showIntro = true;
     private int fuel;
     private ArrayList<CollisionActor> allCollisionActors;
+    public GreenfootSound music;
     /**
      * Constructor for objects of class GameWorld.
      * 
@@ -47,6 +48,9 @@ public class GameWorld extends World
     public void act()
     {
         if ((gameOver && Greenfoot.isKeyDown("enter")) || Greenfoot.isKeyDown("r")) {
+            if(music != null && music.isPlaying()) {
+                music.stop();
+            }
             Greenfoot.setWorld(new GameWorld());
             Greenfoot.start();
         }
