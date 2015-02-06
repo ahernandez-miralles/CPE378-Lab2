@@ -32,6 +32,7 @@ public class GameWorld extends World
         vy = 0;
         camX = 0;
         camY = 0;
+        //new GreenfootSound("music.wav").playLoop();
         placeActors();
     }
     public ArrayList<CollisionActor> getCollisionActors()
