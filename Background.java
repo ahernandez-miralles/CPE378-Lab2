@@ -21,7 +21,7 @@ public class Background extends ScrollingActor
     public void act() 
     {
         super.act();
-        setLocation(xoff + (int)((GameWorld)getWorld()).getCamX()/10, yoff + (int)((GameWorld)getWorld()).getCamY()/10);
+        setLocation(xoff + (int)((GameWorld)getWorld()).getCamX()/10, yoff + (int)((GameWorld)getWorld()).getCamY()/10 + 50);
 
     }    
 }

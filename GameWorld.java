@@ -55,7 +55,8 @@ public class GameWorld extends World
         }
         camX += vx;
         camY += vy;
-        //System.out.println(fuel);
+        
+        //System.out.println(camY);
     }
     public void useFuel()
     {
