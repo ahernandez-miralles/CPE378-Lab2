@@ -38,7 +38,6 @@ public class Lander extends AnimatedActor
     {
         double x = ((GameWorld) getWorld()).getCamX();
         double y = ((GameWorld) getWorld()).getCamY();
-        System.out.println(x + " " + y);
         
         if (x > 8000 || x < -8000 || y > 4000 || y < -4000) {
             killPlayer();
