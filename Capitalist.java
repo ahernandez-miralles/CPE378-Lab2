@@ -18,7 +18,7 @@ public class Capitalist extends CollisionActor
     private int speed;
     private int curTime;
     public Capitalist(int x, int y, int behavior, int range, int speed){
-        super(x, y, "dog_ship_", ".png", 1, 1);
+        super(x, y, "dog_ship_", ".png", 2, 5);
         this.behavior = behavior;
         this.range = range;
         this.speed = speed;
