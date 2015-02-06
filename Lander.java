@@ -24,6 +24,7 @@ public class Lander extends AnimatedActor
         ((GameWorld)(getWorld())).setYVel(0);
         ((GameWorld)(getWorld())).setXVel(0);
         ((GameWorld)(getWorld())).landed = true;
+        ((GameWorld)(getWorld())).gameOver = true;
         engineSound.stop();
         getWorld().addObject(new Explosion(), getX(), getY());
         getWorld().removeObject(this);
@@ -40,7 +41,9 @@ public class Lander extends AnimatedActor
                 if (other.getClass().equals(Platform.class) || other.getClass().equals(FuelPlatform.class) || other.getClass().equals(WinPlatform.class)){
                     if(other.getClass().equals(WinPlatform.class)) {
                         System.out.println("YOU WIN");
-                        killPlayer();
+                        ((GameWorld) getWorld()).gameOver = true;
+                        getWorld().addObject(new WinBubble(), 450, 300);
+                        //killPlayer();
                     }
                     if(Math.abs(((GameWorld)(getWorld())).vx) > 2 
                     || ((GameWorld)(getWorld())).vy < -4 
