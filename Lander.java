@@ -25,6 +25,7 @@ public class Lander extends AnimatedActor
         ((GameWorld)(getWorld())).setXVel(0);
         ((GameWorld)(getWorld())).landed = true;
         engineSound.stop();
+        getWorld().addObject(new Explosion(), getX(), getY());
         getWorld().removeObject(this);
     }
     
