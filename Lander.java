@@ -36,6 +36,14 @@ public class Lander extends AnimatedActor
     
     public void act() 
     {
+        double x = ((GameWorld) getWorld()).getCamX();
+        double y = ((GameWorld) getWorld()).getCamY();
+        System.out.println(x + " " + y);
+        
+        if (x > 8000 || x < -8000 || y > 4000 || y < -4000) {
+            killPlayer();
+            return;
+        }
         ArrayList<CollisionActor> others = ((GameWorld)(getWorld())).getCollisionActors();
         //System.out.println(others);
         for (CollisionActor other : others) {
