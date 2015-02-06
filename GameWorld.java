@@ -46,7 +46,7 @@ public class GameWorld extends World
     @Override
     public void act()
     {
-        if (gameOver && Greenfoot.isKeyDown("enter")) {
+        if ((gameOver && Greenfoot.isKeyDown("enter")) || Greenfoot.isKeyDown("r")) {
             Greenfoot.setWorld(new GameWorld());
             Greenfoot.start();
         }
