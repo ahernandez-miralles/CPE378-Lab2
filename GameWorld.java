@@ -12,6 +12,8 @@ public class GameWorld extends World
     private int width, height;
     public double vx, vy;
     public boolean landed = false;
+    public boolean gameOver = false;
+    private boolean showIntro = true;
     private int fuel;
     private ArrayList<CollisionActor> allCollisionActors;
     /**
@@ -36,11 +38,15 @@ public class GameWorld extends World
     {
         return allCollisionActors;
     }
+    public GameWorld showIntro(boolean showIntro) {
+        this.showIntro = showIntro;
+        return this;
+    }
     @Override
     public void act()
     {
-        if (landed && Greenfoot.isKeyDown("enter")) {
-            Greenfoot.setWorld(new GameWorld());
+        if (gameOver && Greenfoot.isKeyDown("enter")) {
+            Greenfoot.setWorld(new GameWorld().showIntro(false));
             Greenfoot.start();
         }
         if (!landed) {
@@ -152,6 +158,8 @@ public class GameWorld extends World
         //THEN ADD FINISH?
         addObject(bar, 100, 50);
         addObject(land, 450, 250);
-        addObject(new IntroBubble(), bg.xoff, bg.yoff);
+        if (showIntro) {
+            addObject(new IntroBubble(), bg.xoff, bg.yoff);
+        }
     }
 }
