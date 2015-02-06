@@ -15,6 +15,7 @@ public class IntroBubble extends ScrollingActor
     public void act() 
     {
         if (Greenfoot.isKeyDown("enter")) {
+            new GreenfootSound("music.wav").playLoop();
             getWorld().removeObject(this);
         }
     }    
