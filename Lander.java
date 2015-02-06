@@ -39,12 +39,7 @@ public class Lander extends AnimatedActor
             if (this.intersects(other))
             {
                 if (other.getClass().equals(Platform.class) || other.getClass().equals(FuelPlatform.class) || other.getClass().equals(WinPlatform.class)){
-                    if(other.getClass().equals(WinPlatform.class)) {
-                        System.out.println("YOU WIN");
-                        ((GameWorld) getWorld()).gameOver = true;
-                        getWorld().addObject(new WinBubble(), 450, 300);
-                        //killPlayer();
-                    }
+                    
                     if(Math.abs(((GameWorld)(getWorld())).vx) > 2 
                     || ((GameWorld)(getWorld())).vy < -4 
                     || ((GameWorld)(getWorld())).vy > 0.5)
@@ -64,6 +59,12 @@ public class Lander extends AnimatedActor
                         ((GameWorld)(getWorld())).landed = true;
                         if (other.getClass().equals(FuelPlatform.class)) {
                             ((GameWorld)(getWorld())).addFuel();
+                        }
+                        if(other.getClass().equals(WinPlatform.class)) {
+                            System.out.println("YOU WIN");
+                            ((GameWorld) getWorld()).gameOver = true;
+                            getWorld().addObject(new WinBubble(), 450, 300);
+                            //killPlayer();
                         }
                     }
                 }

@@ -46,7 +46,7 @@ public class GameWorld extends World
     public void act()
     {
         if (gameOver && Greenfoot.isKeyDown("enter")) {
-            Greenfoot.setWorld(new GameWorld().showIntro(false));
+            Greenfoot.setWorld(new GameWorld());
             Greenfoot.start();
         }
         if (!landed) {
