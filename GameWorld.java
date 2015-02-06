@@ -89,7 +89,7 @@ public class GameWorld extends World
         //CREATE ALL OBJECTS HERE
         //Constructor for platform: new <Platform, DeathPlatform, FuelPlatform, WinPlatform>(x, y)
         
-        Platform p1 = new Platform(600, 400);
+        //Platform p1 = new Platform(600, 400);
         Platform p2 = new Platform(728, 400);
         Platform p3 = new Platform(450, 360);
         FuelPlatform f1 = new FuelPlatform(664, 400);
@@ -106,33 +106,45 @@ public class GameWorld extends World
         addObject(bg, 0, 0);
         //addObject(test, 400, 250);
         //ADD ALL PLATFORMS HERE
-        addObject(new Capitalist(350, 400, 0, 75, 3), 0, 0);
-        addObject(new Capitalist(250, 400, 0, 75, 3), 0, 0);
+        addObject(new Capitalist(300, 400, 0, 75, 3), 0, 0);
         
-        addObject(p1, 0, 0);
+        //addObject(p1, 0, 0);
         addObject(p2, 0, 0);
         addObject(p3, 0, 0);
-        addObject(new Platform(1200, 550), 0, 0);
-        addObject(new FuelPlatform(1136, 550), 0, 0);
-        addObject(new Platform(1400, 350), 0, 0);
+        addObject(new Platform(1150, 550), 0, 0);
+        //addObject(new FuelPlatform(1136, 550), 0, 0);
+        //addObject(new Platform(1400, 350), 0, 0);
         addObject(new FuelPlatform(1500, 550), 0, 0);
-        addObject(new Capitalist(1050, 550, 0, 100, 3), 0, 0);
+        addObject(new Capitalist(1000, 550, 0, 80, 3), 0, 0);
         
         addObject(new Platform(1600, 875), 0, 0);
         addObject(new FuelPlatform(1500, 1100), 0, 0);
         
         //addObject(new Platform(1350, 1200), 0, 0);
         addObject(new Platform(1200, 1050), 0, 0);
-        addObject(new Platform(1000, 1100), 0, 0);
-        addObject(new Platform(600, 1050), 0, 0);
+        //addObject(new Platform(1000, 1100), 0, 0);
+        addObject(new Platform(550, 1050), 0, 0);
         addObject(new FuelPlatform(750, 1250), 0, 0);
         addObject(new Capitalist(1400, 1250, 1, 350, 1), 0, 0);
+        
+        //addObject(new Platform(900, 1500), 0, 0);
+        addObject(new Capitalist(600, 800, 0, 50, 3), 0, 0);
+        addObject(new Platform(650, 900), 0, 0);
+        addObject(new Platform(600, 975), 0, 0);
+        addObject(new Capitalist(450, 1300, 1, 800, 1), 0, 0);
+        
+        addObject(new Platform(900, 1600), 0, 0);
+        addObject(new FuelPlatform(1100, 1750), 0, 0);
+        addObject(new Platform(1500, 1750), 0, 0);
+        
+        //addObject(new Platform(1800, 1900), 0, 0);
+        addObject(new WinPlatform(1800, 1925), 0, 0); // should be sitting on a platform
         
         addObject(f1, 0, 0);
         //THEN ADD ALL ENEMIES
         addObject(enemy1, 0, 0);
         addObject(enemy2, 0, 0);
-        addObject(new Capitalist(1425, 450, 0, 60, 2), 0, 0);
+        addObject(new Capitalist(1400, 450, 0, 60, 2), 0, 0);
         //THEN ADD FINISH?
         addObject(bar, 100, 50);
         addObject(land, 450, 250);
