@@ -13,7 +13,7 @@ public class Lander extends AnimatedActor
     private GreenfootSound engineSound = new GreenfootSound("sounds/jet_loop.wav");
     
     public Lander(){
-        super("pig_ship_", ".png", 1, 2);
+        super("pig_ship_", ".png", 2, 2);
     }
     /**
      * Act - do whatever the Lander wants to do. This method is called whenever

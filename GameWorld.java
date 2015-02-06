@@ -39,6 +39,10 @@ public class GameWorld extends World
     @Override
     public void act()
     {
+        if (landed && Greenfoot.isKeyDown("enter")) {
+            Greenfoot.setWorld(new GameWorld());
+            Greenfoot.start();
+        }
         if (!landed) {
             vy -= 0.1;
         }
@@ -148,5 +152,6 @@ public class GameWorld extends World
         //THEN ADD FINISH?
         addObject(bar, 100, 50);
         addObject(land, 450, 250);
+        addObject(new IntroBubble(), bg.xoff, bg.yoff);
     }
 }
