@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.params=x\ y\ behavior\ range\ speed
-comment0.target=Capitalist(int,\ int,\ int,\ int,\ int)
-comment1.params=
-comment1.target=void\ act()
-numComments=2
