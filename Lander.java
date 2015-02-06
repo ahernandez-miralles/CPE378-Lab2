@@ -27,7 +27,10 @@ public class Lander extends AnimatedActor
         ((GameWorld)(getWorld())).gameOver = true;
         engineSound.stop();
         getWorld().addObject(new Explosion(), getX(), getY());
-        getWorld().addObject(new Bacon(-(int)((GameWorld)(getWorld())).getCamX() + 420,  -(int)((GameWorld)(getWorld())).getCamY() + 280, Math.random(), Math.random()), getX(), getY());
+        getWorld().addObject(new Bacon(-(int)((GameWorld)(getWorld())).getCamX() + 460,  -(int)((GameWorld)(getWorld())).getCamY() + 280, Math.random() - 0.5, Math.random() - 0.5), getX(), getY());
+        getWorld().addObject(new Bacon(-(int)((GameWorld)(getWorld())).getCamX() + 460,  -(int)((GameWorld)(getWorld())).getCamY() + 280, Math.random() - 0.5, Math.random() - 0.5), getX(), getY());
+        getWorld().addObject(new Bacon(-(int)((GameWorld)(getWorld())).getCamX() + 450,  -(int)((GameWorld)(getWorld())).getCamY() + 280, Math.random() - 0.5, Math.random() - 0.5), getX(), getY());
+        getWorld().addObject(new Bacon(-(int)((GameWorld)(getWorld())).getCamX() + 450,  -(int)((GameWorld)(getWorld())).getCamY() + 280, Math.random() - 0.5, Math.random() - 0.5), getX(), getY());
         getWorld().removeObject(this);
     }
     

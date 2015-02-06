@@ -22,6 +22,8 @@ public class Bacon extends ScrollingActor
     }
     public void act() 
     {
+        super.act();
+        vy += 0.05;
         xoff += vx;
         yoff += vy;
     }    
